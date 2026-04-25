@@ -1,0 +1,871 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Peter | Digital Book Growth Specialist — Professional Book Marketing</title>
+    <meta name="description" content="Peter is a Digital Book Growth Specialist helping authors increase visibility, grow audiences, and convert more book sales through strategic digital marketing.">
+    <meta name="keywords" content="book marketing, author marketing, book promotion, digital book growth, book sales strategy, amazon optimization">
+    <meta name="author" content="Peter - Digital Book Growth">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500&family=Inter:wght@300;400;500;600;700;800&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <style>
+        :root {
+            --gold: #c8a24e;
+            --gold-bright: #d4af5a;
+            --gold-light: #e8d5a0;
+            --gold-dark: #a88a3d;
+            --gold-muted: rgba(200,162,78,0.15);
+            --gold-glow: rgba(200,162,78,0.25);
+            --gold-subtle: rgba(200,162,78,0.06);
+            --gold-border: rgba(200,162,78,0.12);
+            --gold-border-h: rgba(200,162,78,0.3);
+            --bg-0: #060606;
+            --bg-1: #0a0a0a;
+            --bg-2: #0f0f0f;
+            --bg-3: #141414;
+            --bg-4: #181818;
+            --bg-5: #1c1c1c;
+            --bg-6: #202020;
+            --white: #fff;
+            --t1: #f0f0f0;
+            --t2: #c8c8c8;
+            --t3: #a0a0a0;
+            --t4: #777;
+            --t5: #505050;
+            --t6: #353535;
+            --amazon: #FF9900;
+            --amazon-h: #FFB340;
+            --ease: cubic-bezier(0.25,0.46,0.45,0.94);
+            --ease-out: cubic-bezier(0.22,1,0.36,1);
+            --sh-sm: 0 2px 8px rgba(0,0,0,0.3);
+            --sh-md: 0 8px 25px rgba(0,0,0,0.4);
+            --sh-lg: 0 15px 50px rgba(0,0,0,0.5);
+            --sh-xl: 0 25px 80px rgba(0,0,0,0.6);
+            --sh-gold: 0 10px 30px rgba(200,162,78,0.2);
+            --sh-gold-lg: 0 15px 45px rgba(200,162,78,0.3);
+        }
+
+        *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+        html{scroll-behavior:smooth;overflow-x:hidden;font-size:16px;-webkit-text-size-adjust:100%}
+        body{font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;background:var(--bg-1);color:var(--t3);line-height:1.7;overflow-x:hidden;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}
+        ::selection{background:var(--gold);color:var(--bg-0)}
+        img{max-width:100%;height:auto;display:block}
+        a{text-decoration:none;color:inherit;outline:none}
+        button{outline:none;border:none;cursor:pointer;font-family:inherit}
+        ul,ol{list-style:none}
+
+        /* PRELOADER */
+        #preloader{position:fixed;inset:0;background:var(--bg-0);z-index:999999;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:35px;transition:opacity .9s ease,visibility .9s ease}
+        #preloader.loaded{opacity:0;visibility:hidden;pointer-events:none}
+        .pl-spin{width:55px;height:55px;position:relative}
+        .pl-spin::before,.pl-spin::after{content:'';position:absolute;border-radius:50%;border:2px solid transparent}
+        .pl-spin::before{inset:0;border-top-color:var(--gold);border-right-color:var(--gold);animation:sCW 1s linear infinite}
+        .pl-spin::after{inset:7px;border-bottom-color:var(--gold-light);border-left-color:var(--gold-light);animation:sCCW .7s linear infinite}
+        @keyframes sCW{to{transform:rotate(360deg)}}
+        @keyframes sCCW{to{transform:rotate(-360deg)}}
+        .pl-brand{text-align:center}
+        .pl-name{font-family:'Playfair Display',serif;font-size:1.6rem;color:var(--gold);letter-spacing:6px;text-transform:uppercase;animation:plPulse 2s ease infinite}
+        .pl-tag{font-size:.6rem;color:var(--t5);letter-spacing:4px;text-transform:uppercase;margin-top:8px}
+        @keyframes plPulse{0%,100%{opacity:.6}50%{opacity:1}}
+        .pl-bar{width:200px;height:1px;background:var(--gold-border);overflow:hidden}
+        .pl-fill{height:100%;width:0;background:linear-gradient(90deg,var(--gold),var(--gold-light));animation:plFill 2.2s ease forwards}
+        @keyframes plFill{to{width:100%}}
+
+        /* REVEAL */
+        [data-r]{opacity:0;transition:opacity .85s var(--ease),transform .85s var(--ease)}
+        [data-r="u"]{transform:translateY(50px)}
+        [data-r="d"]{transform:translateY(-50px)}
+        [data-r="l"]{transform:translateX(-50px)}
+        [data-r="r"]{transform:translateX(50px)}
+        [data-r="s"]{transform:scale(.88)}
+        [data-r].vis{opacity:1;transform:translate(0) scale(1)}
+        [data-d="1"]{transition-delay:.1s}[data-d="2"]{transition-delay:.2s}[data-d="3"]{transition-delay:.3s}[data-d="4"]{transition-delay:.4s}[data-d="5"]{transition-delay:.5s}[data-d="6"]{transition-delay:.6s}
+
+        /* NAV */
+        .nav{position:fixed;top:0;left:0;width:100%;z-index:10000;padding:22px 65px;display:flex;justify-content:space-between;align-items:center;transition:all .45s ease}
+        .nav.sc{background:rgba(6,6,6,.97);backdrop-filter:blur(30px);-webkit-backdrop-filter:blur(30px);padding:15px 65px;border-bottom:1px solid var(--gold-border);box-shadow:var(--sh-md)}
+        .nav-logo{font-family:'Playfair Display',serif;font-size:1.35rem;font-weight:700;color:var(--gold);letter-spacing:3px;text-transform:uppercase}
+        .nav-sep{color:var(--t6);margin:0 4px;font-weight:300}
+        .nav-sub{color:var(--t2);font-weight:400;font-size:.95rem;letter-spacing:2px}
+        .nav-menu{display:flex;gap:32px;align-items:center}
+        .nav-a{color:var(--t3);font-size:.72rem;font-weight:500;letter-spacing:2.5px;text-transform:uppercase;position:relative;padding:4px 0;transition:color .3s ease}
+        .nav-a::after{content:'';position:absolute;bottom:-3px;left:0;width:0;height:1px;background:var(--gold);transition:width .35s ease}
+        .nav-a:hover,.nav-a.act{color:var(--gold)}
+        .nav-a:hover::after,.nav-a.act::after{width:100%}
+        .nav-cta{border:1.5px solid var(--gold)!important;color:var(--gold)!important;padding:9px 26px!important;transition:all .35s ease!important}
+        .nav-cta::after{display:none!important}
+        .nav-cta:hover{background:var(--gold)!important;color:var(--bg-0)!important}
+        .ham{display:none;flex-direction:column;gap:6px;cursor:pointer;padding:5px;z-index:10002}
+        .ham span{width:28px;height:1.5px;background:var(--gold);transition:all .4s ease;transform-origin:center}
+        .ham.on span:nth-child(1){transform:rotate(45deg) translate(5px,5px)}
+        .ham.on span:nth-child(2){opacity:0;transform:translateX(15px)}
+        .ham.on span:nth-child(3){transform:rotate(-45deg) translate(5px,-5px)}
+        .mob-nav{position:fixed;inset:0;background:rgba(6,6,6,.98);backdrop-filter:blur(25px);z-index:10001;display:flex;flex-direction:column;justify-content:center;align-items:center;gap:22px;opacity:0;visibility:hidden;transition:all .5s ease}
+        .mob-nav.on{opacity:1;visibility:visible}
+        .mob-a{font-family:'Playfair Display',serif;font-size:1.5rem;color:var(--t2);letter-spacing:3px;transition:all .3s ease;transform:translateY(20px);opacity:0}
+        .mob-nav.on .mob-a{transform:translateY(0);opacity:1}
+        .mob-a:nth-child(1){transition-delay:.05s}.mob-a:nth-child(2){transition-delay:.1s}.mob-a:nth-child(3){transition-delay:.15s}.mob-a:nth-child(4){transition-delay:.2s}.mob-a:nth-child(5){transition-delay:.25s}.mob-a:nth-child(6){transition-delay:.3s}.mob-a:nth-child(7){transition-delay:.35s}
+        .mob-a:hover{color:var(--gold)}
+
+        /* HERO */
+        .hero{min-height:100vh;display:flex;align-items:center;position:relative;overflow:hidden;padding:140px 80px 100px}
+        .hero-bg{position:absolute;inset:0;z-index:0}
+        .hero-rad{position:absolute;inset:0;background:radial-gradient(ellipse 900px 600px at 12% 55%,rgba(200,162,78,.06) 0%,transparent 70%),radial-gradient(ellipse 600px 500px at 88% 15%,rgba(200,162,78,.04) 0%,transparent 70%),radial-gradient(ellipse 500px 400px at 50% 95%,rgba(200,162,78,.03) 0%,transparent 70%)}
+        .hero-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(200,162,78,.025) 1px,transparent 1px),linear-gradient(90deg,rgba(200,162,78,.025) 1px,transparent 1px);background-size:70px 70px;animation:gDrift 25s linear infinite}
+        @keyframes gDrift{from{transform:translate(0,0)}to{transform:translate(70px,70px)}}
+        .hero-pts{position:absolute;inset:0;z-index:1;overflow:hidden}
+        .pt{position:absolute;background:var(--gold);border-radius:50%;opacity:0;animation:ptF 12s infinite}
+        @keyframes ptF{0%{opacity:0;transform:translateY(100vh) scale(0)}12%{opacity:.45}88%{opacity:.15}100%{opacity:0;transform:translateY(-8vh) scale(1)}}
+        .hero-in{position:relative;z-index:2;display:flex;align-items:center;gap:100px;max-width:1400px;margin:0 auto;width:100%}
+        .hero-txt{flex:1;max-width:640px}
+        .hero-badge{display:inline-flex;align-items:center;gap:10px;border:1px solid var(--gold-border-h);padding:8px 22px;margin-bottom:28px;animation:fU .9s ease .3s both}
+        .hero-dot{width:5px;height:5px;background:var(--gold);border-radius:50%;animation:dotP 2s ease infinite}
+        @keyframes dotP{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.4;transform:scale(.6)}}
+        .hero-badge-t{font-size:.62rem;color:var(--gold);letter-spacing:4px;text-transform:uppercase;font-weight:600}
+        .hero-h{font-family:'Playfair Display',serif;font-size:4rem;font-weight:800;line-height:1.08;color:var(--white);margin-bottom:18px;animation:fU .9s ease .5s both}
+        .hero-h .ac{color:var(--gold);display:block;position:relative}
+        .hero-h .ac::after{content:'';position:absolute;bottom:4px;left:0;width:100%;height:3px;background:linear-gradient(90deg,var(--gold),transparent);opacity:.25}
+        .hero-tag{font-family:'Cormorant Garamond',serif;font-size:1.3rem;color:var(--gold-light);font-style:italic;margin-bottom:25px;animation:fU .9s ease .65s both}
+        .hero-desc{font-size:.97rem;color:var(--t4);line-height:1.9;margin-bottom:38px;animation:fU .9s ease .8s both}
+        .hero-acts{display:flex;gap:16px;flex-wrap:wrap;animation:fU .9s ease 1s both}
+        @keyframes fU{from{opacity:0;transform:translateY(28px)}to{opacity:1;transform:translateY(0)}}
+
+        .btn{display:inline-flex;align-items:center;gap:10px;padding:15px 36px;font-size:.72rem;font-weight:700;letter-spacing:3px;text-transform:uppercase;font-family:'Inter',sans-serif;transition:all .4s ease;position:relative;overflow:hidden}
+        .btn-g{background:linear-gradient(135deg,var(--gold),var(--gold-dark));color:var(--bg-0)}
+        .btn-g::before{content:'';position:absolute;top:0;left:-100%;width:100%;height:100%;background:linear-gradient(90deg,transparent,rgba(255,255,255,.22),transparent);transition:left .55s ease}
+        .btn-g:hover{transform:translateY(-3px);box-shadow:var(--sh-gold-lg)}
+        .btn-g:hover::before{left:100%}
+        .btn-o{background:transparent;color:var(--gold);border:1.5px solid var(--gold-border-h)}
+        .btn-o:hover{border-color:var(--gold);background:var(--gold-subtle);transform:translateY(-3px)}
+
+        .hero-vis{flex:0 0 370px;animation:fU 1s ease .7s both}
+        .hero-port{position:relative;width:340px;height:420px}
+        .hero-port-bdr{position:absolute;inset:-14px;border:1px solid var(--gold-border-h);pointer-events:none}
+        .hero-port-glow{position:absolute;top:14px;left:14px;right:-14px;bottom:-14px;background:linear-gradient(135deg,var(--gold-subtle),transparent);pointer-events:none}
+        .hero-port img{width:100%;height:100%;object-fit:cover;position:relative;z-index:1;filter:grayscale(12%) contrast(1.05);transition:filter .5s ease}
+        .hero-port:hover img{filter:grayscale(0%) contrast(1.08)}
+        .hero-fb{position:absolute;bottom:-22px;right:-28px;background:var(--bg-2);border:1px solid var(--gold);padding:16px 24px;z-index:5;text-align:center;animation:bFloat 4.5s ease infinite}
+        @keyframes bFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-7px)}}
+        .hero-fb-n{font-family:'Playfair Display',serif;font-size:1.8rem;font-weight:800;color:var(--gold);line-height:1}
+        .hero-fb-l{font-size:.55rem;color:var(--t4);letter-spacing:2px;text-transform:uppercase;margin-top:3px}
+        .hero-side{position:absolute;top:50%;left:-55px;transform:translateY(-50%) rotate(-90deg);font-size:.55rem;color:var(--t5);letter-spacing:4px;text-transform:uppercase;white-space:nowrap;z-index:5}
+        .hero-scroll{position:absolute;bottom:35px;left:50%;transform:translateX(-50%);z-index:5;display:flex;flex-direction:column;align-items:center;gap:8px;animation:fU .9s ease 1.4s both}
+        .hero-scroll-t{font-size:.55rem;color:var(--t5);letter-spacing:3px;text-transform:uppercase}
+        .hero-scroll-l{width:1px;height:35px;background:linear-gradient(180deg,var(--gold),transparent);position:relative;overflow:hidden}
+        .hero-scroll-l::after{content:'';position:absolute;top:-100%;left:0;width:100%;height:50%;background:var(--gold-light);animation:sDrop 2.2s ease infinite}
+        @keyframes sDrop{0%{top:-50%}100%{top:110%}}
+
+        /* TRUST */
+        .trust{background:var(--bg-2);border-top:1px solid var(--gold-border);border-bottom:1px solid var(--gold-border);padding:52px 65px;position:relative;overflow:hidden}
+        .trust::before{content:'';position:absolute;inset:0;background:linear-gradient(90deg,transparent,var(--gold-subtle),transparent);animation:tShim 10s ease infinite}
+        @keyframes tShim{0%{transform:translateX(-100%)}100%{transform:translateX(100%)}}
+        .trust-g{max-width:1250px;margin:0 auto;display:grid;grid-template-columns:repeat(4,1fr);gap:35px;position:relative;z-index:1}
+        .trust-i{text-align:center;display:flex;flex-direction:column;align-items:center;gap:10px;position:relative}
+        .trust-i+.trust-i::before{content:'';position:absolute;left:-17px;top:50%;transform:translateY(-50%);width:1px;height:35px;background:var(--gold-border)}
+        .trust-ic{width:48px;height:48px;border:1px solid var(--gold-border-h);border-radius:50%;display:flex;align-items:center;justify-content:center;transition:all .4s ease}
+        .trust-i:hover .trust-ic{background:var(--gold);border-color:var(--gold)}
+        .trust-ic i{font-size:.95rem;color:var(--gold);transition:color .4s ease}
+        .trust-i:hover .trust-ic i{color:var(--bg-0)}
+        .trust-t{font-family:'Playfair Display',serif;font-size:.92rem;color:var(--white);font-weight:600}
+        .trust-d{font-size:.75rem;color:var(--t4);line-height:1.5;max-width:190px}
+
+        /* SECTION */
+        .sec{padding:125px 80px}
+        .sec-in{max-width:1300px;margin:0 auto}
+        .sec-hd{text-align:center;margin-bottom:75px}
+        .sec-tag{display:inline-flex;align-items:center;gap:12px;margin-bottom:18px}
+        .sec-tag-l{width:30px;height:1px;background:var(--gold)}
+        .sec-tag-t{font-size:.62rem;color:var(--gold);letter-spacing:5px;text-transform:uppercase;font-weight:600}
+        .sec-rule{width:45px;height:2px;background:linear-gradient(90deg,var(--gold),var(--gold-light));margin:0 auto 22px}
+        .sec-title{font-family:'Playfair Display',serif;font-size:2.7rem;font-weight:700;color:var(--white);line-height:1.2;margin-bottom:18px}
+        .sec-title .ac{color:var(--gold)}
+        .sec-sub{font-size:.97rem;color:var(--t4);max-width:660px;margin:0 auto;line-height:1.85}
+
+        /* ABOUT */
+        .about{background:var(--bg-1)}
+        .about-grid{display:grid;grid-template-columns:1fr 1.2fr;gap:85px;align-items:center}
+        .about-img{position:relative;max-width:410px}
+        .about-img-fr{position:absolute;top:18px;left:18px;width:100%;height:100%;border:2px solid var(--gold-border-h);transition:all .5s ease}
+        .about-img:hover .about-img-fr{top:12px;left:12px;border-color:var(--gold)}
+        .about-img img{width:100%;height:510px;object-fit:cover;position:relative;z-index:1;filter:grayscale(12%);transition:all .5s ease}
+        .about-img:hover img{filter:grayscale(0%);transform:translate(-4px,-4px)}
+        .about-bdg{position:absolute;bottom:30px;right:-32px;background:var(--gold);color:var(--bg-0);padding:22px 28px;z-index:5;text-align:center;box-shadow:var(--sh-gold)}
+        .about-bdg-n{font-family:'Playfair Display',serif;font-size:2rem;font-weight:800;line-height:1}
+        .about-bdg-l{font-size:.6rem;letter-spacing:2px;text-transform:uppercase;font-weight:700;margin-top:3px}
+        .about-ct .sec-tag{justify-content:flex-start}
+        .about-h{font-family:'Playfair Display',serif;font-size:2.4rem;color:var(--white);line-height:1.2;margin-bottom:10px}
+        .about-h .ac{color:var(--gold)}
+        .about-tl{font-family:'Cormorant Garamond',serif;font-size:1.1rem;color:var(--gold-light);font-style:italic;margin-bottom:25px}
+        .about-p{font-size:.92rem;color:var(--t3);line-height:1.9;margin-bottom:16px}
+        .about-ul{margin:22px 0}
+        .about-ul li{display:flex;align-items:flex-start;gap:12px;margin-bottom:12px;font-size:.88rem;color:var(--t3)}
+        .about-ul li i{color:var(--gold);margin-top:5px;flex-shrink:0;font-size:.5rem}
+        .about-phil{margin-top:28px;padding:25px;border-left:3px solid var(--gold);background:var(--gold-subtle)}
+        .about-phil-l{font-size:.65rem;color:var(--gold);letter-spacing:3px;text-transform:uppercase;font-weight:700;margin-bottom:8px}
+        .about-phil p{font-size:.85rem;color:var(--t4);line-height:1.85;font-style:italic}
+
+        /* PILLARS */
+        .pillars{background:var(--bg-2)}
+        .pil-g{display:grid;grid-template-columns:repeat(4,1fr);gap:22px}
+        .pil{background:var(--bg-3);border:1px solid var(--gold-border);padding:42px 28px;text-align:center;position:relative;overflow:hidden;transition:all .5s ease}
+        .pil::before{content:'';position:absolute;top:0;left:0;width:100%;height:2px;background:linear-gradient(90deg,transparent,var(--gold),transparent);opacity:0;transition:opacity .5s ease}
+        .pil:hover{transform:translateY(-8px);border-color:var(--gold-border-h);box-shadow:var(--sh-lg)}
+        .pil:hover::before{opacity:1}
+        .pil-ic{width:64px;height:64px;border:1.5px solid var(--gold-border-h);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 22px;transition:all .5s ease}
+        .pil:hover .pil-ic{background:var(--gold);border-color:var(--gold);transform:scale(1.08)}
+        .pil-ic i{font-size:1.15rem;color:var(--gold);transition:color .5s ease}
+        .pil:hover .pil-ic i{color:var(--bg-0)}
+        .pil h4{font-family:'Playfair Display',serif;font-size:1.1rem;color:var(--white);margin-bottom:14px}
+        .pil p{font-size:.8rem;color:var(--t4);line-height:1.75}
+
+        /* STATS */
+        .stats{background:var(--bg-3);padding:70px 80px;position:relative}
+        .stats::before,.stats::after{content:'';position:absolute;left:0;width:100%;height:1px;background:linear-gradient(90deg,transparent,var(--gold),transparent);opacity:.2}
+        .stats::before{top:0}.stats::after{bottom:0}
+        .stats-g{max-width:1050px;margin:0 auto;display:grid;grid-template-columns:repeat(4,1fr);gap:35px;text-align:center}
+        .stats-i{position:relative;padding:18px}
+        .stats-i+.stats-i::before{content:'';position:absolute;left:0;top:50%;transform:translateY(-50%);width:1px;height:45px;background:var(--gold-border)}
+        .stats-n{font-family:'Playfair Display',serif;font-size:3rem;font-weight:800;color:var(--gold);line-height:1;margin-bottom:6px}
+        .stats-s{font-size:1.8rem;color:var(--gold-light)}
+        .stats-l{font-size:.65rem;color:var(--t4);letter-spacing:3px;text-transform:uppercase}
+
+        /* SERVICES */
+        .services{background:var(--bg-1)}
+        .svc{display:grid;grid-template-columns:90px 1fr;gap:40px;padding:52px 0;border-bottom:1px solid var(--gold-border);transition:all .4s ease}
+        .svc:last-of-type{border-bottom:none}
+        .svc:hover{padding-left:22px}
+        .svc-n{font-family:'Playfair Display',serif;font-size:3.2rem;font-weight:800;color:rgba(200,162,78,.1);line-height:1;transition:color .4s ease}
+        .svc:hover .svc-n{color:var(--gold)}
+        .svc-b h4{font-family:'Playfair Display',serif;font-size:1.5rem;color:var(--white);margin-bottom:14px}
+        .svc-b>p{font-size:.92rem;color:var(--t3);line-height:1.85;margin-bottom:20px}
+        .svc-f{display:grid;grid-template-columns:1fr 1fr;gap:9px 22px;margin-bottom:20px}
+        .svc-f li{display:flex;align-items:flex-start;gap:9px;font-size:.83rem;color:var(--t3)}
+        .svc-f li i{color:var(--gold);margin-top:4px;flex-shrink:0;font-size:.6rem}
+        .svc-out{padding:16px 20px;background:var(--gold-subtle);border-left:2px solid var(--gold)}
+        .svc-out p{font-size:.83rem;color:var(--gold-light);font-style:italic;line-height:1.7}
+
+        .cta-box{background:linear-gradient(135deg,var(--gold-muted),var(--gold-subtle));border:1px solid var(--gold-border-h);padding:60px;text-align:center;margin-top:65px;max-width:880px;margin-left:auto;margin-right:auto;position:relative;overflow:hidden}
+        .cta-box::before{content:'';position:absolute;top:0;left:0;width:100%;height:2px;background:linear-gradient(90deg,transparent,var(--gold),transparent)}
+        .cta-box h3{font-family:'Playfair Display',serif;font-size:1.9rem;color:var(--white);margin-bottom:14px}
+        .cta-box p{color:var(--t4);font-size:.93rem;margin-bottom:28px;line-height:1.7}
+
+        /* AUTHORS */
+        .authors{background:var(--bg-2)}
+        .auth-g{display:grid;grid-template-columns:repeat(3,1fr);gap:32px}
+        .auth-c{background:var(--bg-3);border:1px solid var(--gold-border);overflow:hidden;transition:all .5s ease;position:relative}
+        .auth-c::before{content:'';position:absolute;top:0;left:0;width:100%;height:2px;background:linear-gradient(90deg,transparent,var(--gold),transparent);opacity:0;transition:opacity .5s ease}
+        .auth-c:hover{transform:translateY(-10px);box-shadow:var(--sh-xl);border-color:var(--gold-border-h)}
+        .auth-c:hover::before{opacity:1}
+        .auth-top{padding:32px 28px 18px;display:flex;align-items:center;gap:18px}
+        .auth-av{width:72px;height:72px;border-radius:50%;overflow:hidden;border:2px solid var(--gold);flex-shrink:0;display:block;transition:all .4s ease;position:relative}
+        .auth-av::after{content:'';position:absolute;inset:-5px;border:1px solid rgba(200,162,78,.25);border-radius:50%;opacity:0;transition:opacity .4s ease}
+        .auth-av:hover{transform:scale(1.1);box-shadow:0 0 22px rgba(200,162,78,.25)}
+        .auth-av:hover::after{opacity:1}
+        .auth-av img{width:100%;height:100%;object-fit:cover}
+        .auth-name{font-family:'Playfair Display',serif;font-size:1.2rem;color:var(--white);margin-bottom:3px}
+        .auth-role{font-size:.65rem;color:var(--gold);letter-spacing:2px;text-transform:uppercase;font-weight:600}
+        .auth-book{padding:8px 28px 22px;display:flex;justify-content:center}
+        .auth-cover{width:185px;height:265px;overflow:hidden;border:1px solid var(--gold-border-h);display:block;transition:all .5s ease;position:relative}
+        .auth-cover::after{content:'\f270';font-family:'Font Awesome 6 Free';font-weight:900;position:absolute;inset:0;display:flex;align-items:center;justify-content:center;background:rgba(0,0,0,.6);color:var(--gold);font-size:1.8rem;opacity:0;transition:opacity .4s ease}
+        .auth-cover:hover{transform:scale(1.04) translateY(-4px);box-shadow:var(--sh-lg)}
+        .auth-cover:hover::after{opacity:1}
+        .auth-cover img{width:100%;height:100%;object-fit:cover}
+        .auth-info{padding:12px 28px}
+        .auth-res{padding:14px 16px;background:var(--gold-subtle);border-left:2px solid var(--gold)}
+        .auth-res p{font-size:.78rem;color:var(--gold-light);font-style:italic;line-height:1.65}
+        .auth-acts{padding:12px 28px 28px;display:flex;flex-direction:column;gap:9px}
+        .auth-email{display:flex;align-items:center;gap:9px;color:var(--t4);font-size:.76rem;padding:4px 0;transition:color .3s ease}
+        .auth-email i{color:var(--gold);font-size:.82rem;width:16px;flex-shrink:0}
+        .auth-email:hover{color:var(--gold)}
+        .auth-amz{display:flex;align-items:center;justify-content:center;gap:9px;background:var(--amazon);color:#000;padding:11px 20px;font-size:.68rem;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;font-family:'Inter',sans-serif;transition:all .35s ease}
+        .auth-amz:hover{background:var(--amazon-h);transform:translateY(-2px);box-shadow:0 6px 18px rgba(255,153,0,.3)}
+        .auth-amz i{font-size:1rem}
+
+        /* PROCESS */
+        .process{background:var(--bg-1)}
+        .proc-tl{max-width:830px;margin:0 auto;position:relative}
+        .proc-tl::before{content:'';position:absolute;left:40px;top:0;bottom:0;width:1px;background:linear-gradient(180deg,var(--gold),rgba(200,162,78,.08))}
+        .proc-s{display:flex;gap:42px;margin-bottom:50px}
+        .proc-s:last-child{margin-bottom:0}
+        .proc-ic{width:80px;height:80px;border:2px solid var(--gold-border-h);border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;background:var(--bg-1);z-index:2;transition:all .4s ease}
+        .proc-ic-n{font-family:'Playfair Display',serif;font-size:1.4rem;color:var(--gold);font-weight:700;transition:color .4s ease}
+        .proc-s:hover .proc-ic{background:var(--gold);border-color:var(--gold);transform:scale(1.08);box-shadow:var(--sh-gold)}
+        .proc-s:hover .proc-ic-n{color:var(--bg-0)}
+        .proc-txt{padding-top:16px;flex:1}
+        .proc-txt h4{font-family:'Playfair Display',serif;font-size:1.3rem;color:var(--white);margin-bottom:10px}
+        .proc-txt p{font-size:.88rem;color:var(--t3);line-height:1.85}
+
+        /* POLICY */
+        .policy{background:var(--bg-2)}
+        .pol-g{display:grid;grid-template-columns:1fr 1fr;gap:65px;align-items:start}
+        .pol-txt h3{font-family:'Playfair Display',serif;font-size:1.9rem;color:var(--white);line-height:1.3;margin-bottom:18px}
+        .pol-txt h3 .ac{color:var(--gold)}
+        .pol-d{font-size:.92rem;color:var(--t3);line-height:1.9;margin-bottom:18px}
+        .pol-ul{margin:22px 0}
+        .pol-ul li{display:flex;align-items:flex-start;gap:11px;margin-bottom:12px;font-size:.86rem;color:var(--t3)}
+        .pol-ul li i{color:var(--gold);margin-top:4px;flex-shrink:0;font-size:.65rem}
+        .pol-notice{margin-top:22px;padding:18px;border-left:2px solid var(--gold);background:var(--gold-subtle);font-size:.83rem;color:var(--t4);font-style:italic;line-height:1.8}
+        .pol-cards{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+        .pol-card{background:var(--bg-3);border:1px solid var(--gold-border);padding:28px 22px;transition:all .4s ease}
+        .pol-card:hover{border-color:var(--gold-border-h);transform:translateY(-4px);box-shadow:var(--sh-md)}
+        .pol-card-ic{width:42px;height:42px;border:1px solid var(--gold-border-h);border-radius:50%;display:flex;align-items:center;justify-content:center;margin-bottom:16px;transition:all .4s ease}
+        .pol-card:hover .pol-card-ic{background:var(--gold);border-color:var(--gold)}
+        .pol-card-ic i{color:var(--gold);font-size:.85rem;transition:color .4s ease}
+        .pol-card:hover .pol-card-ic i{color:var(--bg-0)}
+        .pol-card h5{font-family:'Playfair Display',serif;font-size:.95rem;color:var(--white);margin-bottom:8px}
+        .pol-card p{font-size:.78rem;color:var(--t4);line-height:1.7}
+
+        /* CONTACT */
+        .contact{background:var(--bg-1)}
+        .con-g{display:grid;grid-template-columns:1fr 1.1fr;gap:75px;align-items:start}
+        .con-info h3{font-family:'Playfair Display',serif;font-size:2.4rem;color:var(--white);line-height:1.2;margin-bottom:8px}
+        .con-info h3 .ac{color:var(--gold)}
+        .con-tl{font-family:'Cormorant Garamond',serif;font-size:1.05rem;color:var(--gold-light);font-style:italic;margin-bottom:22px}
+        .con-desc{font-size:.92rem;color:var(--t3);line-height:1.85;margin-bottom:32px}
+        .con-dets{margin-bottom:35px}
+        .con-dets li{display:flex;align-items:center;gap:16px;margin-bottom:20px}
+        .con-det-ic{width:48px;height:48px;border:1.5px solid var(--gold-border-h);border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:all .3s ease}
+        .con-dets li:hover .con-det-ic{background:var(--gold);border-color:var(--gold)}
+        .con-det-ic i{color:var(--gold);font-size:.9rem;transition:color .3s ease}
+        .con-dets li:hover .con-det-ic i{color:var(--bg-0)}
+        .con-det-label{font-size:.6rem;color:var(--t5);letter-spacing:2px;text-transform:uppercase;margin-bottom:2px}
+        .con-det-val{font-size:.88rem;color:var(--t2)}
+        .con-port{position:relative;width:230px}
+        .con-port-fr{position:absolute;top:10px;left:10px;width:100%;height:100%;border:1px solid var(--gold-border-h)}
+        .con-port img{width:100%;height:290px;object-fit:cover;position:relative;z-index:1;filter:grayscale(22%);transition:all .4s ease}
+        .con-port:hover img{filter:grayscale(0%);transform:translate(-3px,-3px)}
+
+        .con-form{background:var(--bg-2);border:1px solid var(--gold-border);padding:48px;position:relative}
+        .con-form::before{content:'';position:absolute;top:0;left:0;width:100%;height:2px;background:linear-gradient(90deg,transparent,var(--gold),transparent)}
+        .con-form-t{font-family:'Playfair Display',serif;font-size:1.4rem;color:var(--white);margin-bottom:4px}
+        .con-form-d{font-size:.78rem;color:var(--t4);margin-bottom:28px}
+        .f-row{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+        .f-grp{margin-bottom:16px}
+        .f-grp label{display:block;font-size:.62rem;color:var(--gold);letter-spacing:2.5px;text-transform:uppercase;font-weight:600;margin-bottom:7px}
+        .f-grp input,.f-grp textarea,.f-grp select{width:100%;padding:13px 16px;background:var(--bg-3);border:1px solid var(--gold-border);color:var(--t2);font-family:'Inter',sans-serif;font-size:.86rem;transition:all .3s ease;outline:none;-webkit-appearance:none;appearance:none}
+        .f-grp input::placeholder,.f-grp textarea::placeholder{color:var(--t5)}
+        .f-grp input:focus,.f-grp textarea:focus,.f-grp select:focus{border-color:var(--gold);box-shadow:0 0 18px var(--gold-subtle)}
+        .f-grp textarea{resize:vertical;min-height:125px}
+        .f-grp select{cursor:pointer;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='10' viewBox='0 0 10 10'%3E%3Cpath fill='%23c8a24e' d='M5 7L0 2h10z'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 14px center;padding-right:36px}
+        .f-grp select option{background:var(--bg-3);color:var(--t2)}
+        .f-sub{width:100%;padding:16px;background:linear-gradient(135deg,var(--gold),var(--gold-dark));color:var(--bg-0);font-size:.75rem;font-weight:700;letter-spacing:3px;text-transform:uppercase;transition:all .4s ease;position:relative;overflow:hidden;margin-top:4px}
+        .f-sub::before{content:'';position:absolute;top:0;left:-100%;width:100%;height:100%;background:linear-gradient(90deg,transparent,rgba(255,255,255,.2),transparent);transition:left .55s ease}
+        .f-sub:hover{transform:translateY(-2px);box-shadow:var(--sh-gold-lg)}
+        .f-sub:hover::before{left:100%}
+        .f-note{margin-top:16px;text-align:center;font-size:.7rem;color:var(--t5);display:flex;align-items:center;justify-content:center;gap:5px}
+        .f-note i{color:var(--gold);font-size:.65rem}
+
+        /* FOOTER */
+        .footer{background:var(--bg-2);border-top:1px solid var(--gold-border)}
+        .ft-main{max-width:1300px;margin:0 auto;padding:80px 80px 40px;display:grid;grid-template-columns:2.2fr 1fr 1fr 1.5fr;gap:50px}
+        .ft-brand h3{font-family:'Playfair Display',serif;font-size:1.3rem;color:var(--gold);letter-spacing:2px;margin-bottom:3px}
+        .ft-brand h3 span{color:var(--white);font-weight:400}
+        .ft-brand-tl{font-family:'Cormorant Garamond',serif;font-size:.9rem;color:var(--gold-light);font-style:italic;margin-bottom:16px}
+        .ft-brand>p{font-size:.8rem;color:var(--t4);line-height:1.8;margin-bottom:20px}
+        .ft-badges{display:flex;flex-wrap:wrap;gap:15px}
+        .ft-badge{display:flex;align-items:center;gap:5px;font-size:.68rem;color:var(--t4)}
+        .ft-badge i{color:var(--gold);font-size:.65rem}
+        .ft-col h5{font-family:'Playfair Display',serif;font-size:.92rem;color:var(--white);margin-bottom:20px;padding-bottom:10px;position:relative}
+        .ft-col h5::after{content:'';position:absolute;bottom:0;left:0;width:22px;height:1.5px;background:var(--gold)}
+        .ft-nav li{margin-bottom:9px}
+        .ft-nav a{color:var(--t4);font-size:.8rem;transition:all .3s ease;display:inline-flex;align-items:center}
+        .ft-nav a::before{content:'';width:0;height:1px;background:var(--gold);transition:all .3s ease;margin-right:0}
+        .ft-nav a:hover{color:var(--gold);padding-left:4px}
+        .ft-nav a:hover::before{width:10px;margin-right:7px}
+        .ft-con li{display:flex;align-items:flex-start;gap:10px;margin-bottom:13px;font-size:.8rem;color:var(--t4)}
+        .ft-con li i{color:var(--gold);margin-top:3px;font-size:.75rem;width:14px;flex-shrink:0}
+        .ft-con li a{color:var(--t4);transition:color .3s ease}
+        .ft-con li a:hover{color:var(--gold)}
+        .ft-bot{max-width:1300px;margin:0 auto;padding:22px 80px;border-top:1px solid var(--gold-border);display:flex;justify-content:space-between;align-items:center}
+        .ft-copy{font-size:.7rem;color:var(--t5)}
+        .ft-copy .ac{color:var(--gold)}
+        .ft-top{width:40px;height:40px;border:1px solid var(--gold-border-h);display:flex;align-items:center;justify-content:center;color:var(--gold);font-size:.75rem;transition:all .3s ease}
+        .ft-top:hover{background:var(--gold);color:var(--bg-0);border-color:var(--gold)}
+
+        /* RESPONSIVE */
+        @media(max-width:1200px){
+            .hero-h{font-size:3.3rem}.pil-g{grid-template-columns:repeat(2,1fr)}.auth-g{grid-template-columns:repeat(2,1fr)}.ft-main{grid-template-columns:1fr 1fr}.hero,.sec{padding-left:50px;padding-right:50px}
+        }
+        @media(max-width:992px){
+            .nav-menu{display:none}.ham{display:flex}.nav{padding:15px 28px}.nav.sc{padding:12px 28px}
+            .hero{padding:115px 28px 65px}.hero-in{flex-direction:column-reverse;text-align:center;gap:45px}.hero-vis{flex:none}.hero-port{width:270px;height:340px;margin:0 auto}.hero-acts{justify-content:center}.hero-side,.hero-scroll{display:none}
+            .sec{padding:80px 28px}
+            .about-grid{grid-template-columns:1fr;gap:55px}.about-img{max-width:340px;margin:0 auto}.about-ct .sec-tag{justify-content:center}.about-h,.about-tl{text-align:center}
+            .svc-f{grid-template-columns:1fr}.pol-g{grid-template-columns:1fr}.con-g{grid-template-columns:1fr}
+            .trust{padding:38px 28px}.trust-g{grid-template-columns:repeat(2,1fr);gap:25px}.trust-i+.trust-i::before{display:none}
+            .stats{padding:55px 28px}.stats-g{grid-template-columns:repeat(2,1fr);gap:25px}.stats-i+.stats-i::before{display:none}
+            .ft-main{padding:55px 28px 30px}.ft-bot{padding:18px 28px;flex-direction:column;gap:12px;text-align:center}
+        }
+        @media(max-width:768px){
+            .hero-h{font-size:2.4rem}.sec-title{font-size:2rem}.pil-g{grid-template-columns:1fr}.auth-g{grid-template-columns:1fr;max-width:400px;margin:0 auto}
+            .svc{grid-template-columns:1fr;gap:12px}.svc-n{font-size:2.4rem}.f-row{grid-template-columns:1fr}.ft-main{grid-template-columns:1fr;gap:30px}.pol-cards{grid-template-columns:1fr}
+            .hero-fb{right:-8px;bottom:-12px;padding:12px 16px}.hero-fb-n{font-size:1.4rem}.about-bdg{right:0}
+            .cta-box{padding:38px 22px}.con-form{padding:28px 20px}.con-port{width:190px}
+        }
+        @media(max-width:480px){
+            .hero{padding:95px 18px 45px}.hero-h{font-size:1.9rem}.hero-tag{font-size:1.05rem}.hero-port{width:230px;height:290px}
+            .sec{padding:60px 18px}.sec-title{font-size:1.7rem}.nav{padding:12px 18px}
+            .stats-n{font-size:2.3rem}.about-h{font-size:1.9rem}.btn{padding:13px 26px;font-size:.68rem}.con-info h3{font-size:1.9rem}.trust-g{grid-template-columns:1fr}
+        }
+    </style>
+</head>
+<body>
+
+<!-- PRELOADER -->
+<div id="preloader">
+    <div class="pl-spin"></div>
+    <div class="pl-brand">
+        <div class="pl-name">Digital Book Growth</div>
+        <div class="pl-tag">Loading Experience</div>
+    </div>
+    <div class="pl-bar"><div class="pl-fill"></div></div>
+</div>
+
+<!-- NAV -->
+<nav class="nav" id="mainNav">
+    <a href="#home" class="nav-logo">PETER<span class="nav-sep">|</span><span class="nav-sub">DBG</span></a>
+    <ul class="nav-menu">
+        <li><a href="#home" class="nav-a">Home</a></li>
+        <li><a href="#about" class="nav-a">About</a></li>
+        <li><a href="#services" class="nav-a">Services</a></li>
+        <li><a href="#authors" class="nav-a">Authors</a></li>
+        <li><a href="#process" class="nav-a">Process</a></li>
+        <li><a href="#policy" class="nav-a">Policy</a></li>
+        <li><a href="#contact" class="nav-a nav-cta">Contact</a></li>
+    </ul>
+    <div class="ham" id="ham"><span></span><span></span><span></span></div>
+</nav>
+
+<!-- MOBILE NAV -->
+<div class="mob-nav" id="mobNav">
+    <a href="#home" class="mob-a" onclick="cM()">Home</a>
+    <a href="#about" class="mob-a" onclick="cM()">About</a>
+    <a href="#services" class="mob-a" onclick="cM()">Services</a>
+    <a href="#authors" class="mob-a" onclick="cM()">Authors</a>
+    <a href="#process" class="mob-a" onclick="cM()">Process</a>
+    <a href="#policy" class="mob-a" onclick="cM()">Policy</a>
+    <a href="#contact" class="mob-a" onclick="cM()">Contact</a>
+</div>
+
+<!-- HERO -->
+<section class="hero" id="home">
+    <div class="hero-bg"><div class="hero-rad"></div><div class="hero-grid"></div></div>
+    <div class="hero-pts" id="pts"></div>
+    <div class="hero-in">
+        <div class="hero-txt">
+            <div class="hero-badge"><span class="hero-dot"></span><span class="hero-badge-t">Book Specialist Marketer</span></div>
+            <h1 class="hero-h">Digital Book<span class="ac">Growth Specialist</span></h1>
+            <p class="hero-tag">Transforming Books into Revenue-Generating Digital Assets</p>
+            <p class="hero-desc">I help authors strategically position their books in a saturated digital marketplace to achieve sustained visibility, targeted reader acquisition, and consistent sales growth. My approach combines data-informed positioning, optimized sales pathways, and precision marketing tactics specifically engineered for book conversion. Every element is designed to transform passive browsers into committed buyers while building long-term author equity.</p>
+            <div class="hero-acts">
+                <a href="#contact" class="btn btn-g"><i class="fas fa-envelope"></i> Start Your Project</a>
+                <a href="#services" class="btn btn-o"><i class="fas fa-arrow-right"></i> Explore Services</a>
+            </div>
+        </div>
+        <div class="hero-vis">
+            <div class="hero-port">
+                <div class="hero-port-bdr"></div>
+                <div class="hero-port-glow"></div>
+                <img src="expert.jpeg" alt="Peter - Digital Book Growth Specialist">
+                <div class="hero-fb"><div class="hero-fb-n">100%</div><div class="hero-fb-l">Documented</div></div>
+                <div class="hero-side">Book Marketing Specialist</div>
+            </div>
+        </div>
+    </div>
+    <div class="hero-scroll"><span class="hero-scroll-t">Scroll</span><div class="hero-scroll-l"></div></div>
+</section>
+
+<!-- TRUST -->
+<div class="trust">
+    <div class="trust-g" data-r="u">
+        <div class="trust-i"><div class="trust-ic"><i class="fas fa-shield-alt"></i></div><div class="trust-t">Fully Documented</div><div class="trust-d">Every interaction recorded via email for complete accountability</div></div>
+        <div class="trust-i"><div class="trust-ic"><i class="fas fa-crosshairs"></i></div><div class="trust-t">Precision Targeting</div><div class="trust-d">Data-driven audience alignment for maximum conversion</div></div>
+        <div class="trust-i"><div class="trust-ic"><i class="fas fa-chart-line"></i></div><div class="trust-t">Results Focused</div><div class="trust-d">Strategies built around measurable sales outcomes</div></div>
+        <div class="trust-i"><div class="trust-ic"><i class="fas fa-award"></i></div><div class="trust-t">Professional Standard</div><div class="trust-d">Premium service exclusively for serious authors</div></div>
+    </div>
+</div>
+
+<!-- ABOUT -->
+<section class="about sec" id="about">
+    <div class="sec-in">
+        <div class="about-grid">
+            <div class="about-visual" data-r="l">
+                <div class="about-img">
+                    <div class="about-img-fr"></div>
+                    <img src="expert.jpeg" alt="Peter - Book Marketing Specialist">
+                    <div class="about-bdg"><div class="about-bdg-n">PRO</div><div class="about-bdg-l">Specialist</div></div>
+                </div>
+            </div>
+            <div class="about-ct" data-r="r">
+                <div class="sec-tag"><span class="sec-tag-l"></span><span class="sec-tag-t">About Me</span><span class="sec-tag-l"></span></div>
+                <h2 class="about-h">Peter | Founder, <span class="ac">Digital Book Growth</span></h2>
+                <p class="about-tl">Professional Book Marketing Strategist for Independent and Emerging Authors</p>
+                <p class="about-p">With a specialized focus on book marketing and sales optimization, I serve as a strategic partner for authors seeking measurable growth in their publishing journey. My expertise centers on transforming individual titles into revenue-generating digital assets through disciplined, professional methodologies.</p>
+                <p class="about-p">I operate exclusively with authors who are serious about treating their books as professional products. This means moving beyond basic promotion into structured systems that drive discoverability, authority, and conversion at every stage of the reader journey.</p>
+                <p class="about-p">My background as a Book Specialist Marketer has equipped me to address the unique challenges independent authors face:</p>
+                <ul class="about-ul">
+                    <li><i class="fas fa-diamond"></i> Limited visibility in a crowded marketplace</li>
+                    <li><i class="fas fa-diamond"></i> Fragmented and inconsistent marketing efforts</li>
+                    <li><i class="fas fa-diamond"></i> Difficulty standing out among thousands of new releases every month</li>
+                    <li><i class="fas fa-diamond"></i> Lack of a structured system that converts interest into actual sales</li>
+                    <li><i class="fas fa-diamond"></i> Absence of professional brand identity that commands reader trust</li>
+                </ul>
+                <p class="about-p">I solve these challenges by building tailored strategies that emphasize clarity, professionalism, and measurable results. Every author I work with receives a customized approach built around their specific book, genre, audience, and growth objectives.</p>
+                <div class="about-phil">
+                    <div class="about-phil-l">Operating Philosophy</div>
+                    <p>All client projects are managed with complete documentation and full transparency. Communication occurs solely through email to maintain a clear, auditable record of every strategy discussion, implementation step, performance update, and adjustment. This is not a casual service — every interaction is treated as a serious professional business relationship built for long-term author success.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- PILLARS -->
+<section class="pillars sec">
+    <div class="sec-in">
+        <div class="sec-hd" data-r="u">
+            <div class="sec-tag"><span class="sec-tag-l"></span><span class="sec-tag-t">Core Pillars</span><span class="sec-tag-l"></span></div>
+            <div class="sec-rule"></div>
+            <h2 class="sec-title">The Foundation of <span class="ac">Strategic Growth</span></h2>
+            <p class="sec-sub">Every engagement is built upon these four non-negotiable pillars that ensure your book receives the professional, results-driven marketing it deserves.</p>
+        </div>
+        <div class="pil-g">
+            <div class="pil" data-r="u" data-d="1"><div class="pil-ic"><i class="fas fa-crosshairs"></i></div><h4>Precision Audience Targeting</h4><p>Your book is aligned with readers who are most likely to purchase based on genre, behavior, and interest profiling. No wasted exposure — every strategy targets high-intent buyers.</p></div>
+            <div class="pil" data-r="u" data-d="2"><div class="pil-ic"><i class="fas fa-funnel-dollar"></i></div><h4>Conversion-Focused Funnels</h4><p>Every pathway from discovery to purchase is structured to eliminate friction and maximize completed sales. The gap between interest and transaction is where most authors lose revenue.</p></div>
+            <div class="pil" data-r="u" data-d="3"><div class="pil-ic"><i class="fas fa-gem"></i></div><h4>Professional Brand Elevation</h4><p>Your book and author identity are positioned as premium literary assets worthy of serious reader investment. Professional perception directly impacts purchase decisions.</p></div>
+            <div class="pil" data-r="u" data-d="4"><div class="pil-ic"><i class="fas fa-file-signature"></i></div><h4>Documented Accountability</h4><p>Every strategy, decision, and result is tracked and communicated through professional email correspondence ensuring complete transparency. Nothing is left to memory.</p></div>
+        </div>
+    </div>
+</section>
+
+<!-- STATS -->
+<div class="stats">
+    <div class="stats-g" data-r="u">
+        <div class="stats-i"><div class="stats-n"><span class="ctr" data-t="100">0</span><span class="stats-s">%</span></div><div class="stats-l">Email Documented</div></div>
+        <div class="stats-i"><div class="stats-n"><span class="ctr" data-t="6">0</span></div><div class="stats-l">Core Services</div></div>
+        <div class="stats-i"><div class="stats-n"><span class="ctr" data-t="5">0</span></div><div class="stats-l">Step Process</div></div>
+        <div class="stats-i"><div class="stats-n"><span class="ctr" data-t="3">0</span></div><div class="stats-l">Featured Authors</div></div>
+    </div>
+</div>
+
+<!-- SERVICES -->
+<section class="services sec" id="services">
+    <div class="sec-in">
+        <div class="sec-hd" data-r="u">
+            <div class="sec-tag"><span class="sec-tag-l"></span><span class="sec-tag-t">Services</span><span class="sec-tag-l"></span></div>
+            <div class="sec-rule"></div>
+            <h2 class="sec-title">Strategic Book <span class="ac">Growth Services</span></h2>
+            <p class="sec-sub">Each service is fully customized around your book's genre, target audience, competitive landscape, and specific growth objectives.</p>
+        </div>
+
+        <div class="svc" data-r="u"><div class="svc-n">01</div><div class="svc-b"><h4>Book Launch & Positioning Strategy</h4><p>A successful book launch does not happen by accident. It is the result of careful planning, strategic timing, and coordinated execution across multiple channels simultaneously.</p><ul class="svc-f"><li><i class="fas fa-check-circle"></i> Deep audience profiling to identify your buyers</li><li><i class="fas fa-check-circle"></i> Competitive analysis of your genre landscape</li><li><i class="fas fa-check-circle"></i> Compelling messaging for buyer motivations</li><li><i class="fas fa-check-circle"></i> Sales page optimization for conversion</li><li><i class="fas fa-check-circle"></i> Pre-launch momentum building</li><li><i class="fas fa-check-circle"></i> Launch day platform coordination</li><li><i class="fas fa-check-circle"></i> Post-launch sales velocity strategy</li></ul><div class="svc-out"><p>The outcome is a book that enters the market with authority, clarity, and a clear pathway to consistent sales from day one.</p></div></div></div>
+
+        <div class="svc" data-r="u"><div class="svc-n">02</div><div class="svc-b"><h4>Sales Funnel Optimization</h4><p>The gap between a reader discovering your book and actually purchasing it is where most authors lose sales. A poorly structured pathway creates hesitation and abandoned purchases.</p><ul class="svc-f"><li><i class="fas fa-check-circle"></i> End-to-end funnel from impression to purchase</li><li><i class="fas fa-check-circle"></i> Strategic landing page architecture</li><li><i class="fas fa-check-circle"></i> Precision calls-to-action placement</li><li><i class="fas fa-check-circle"></i> Reader preview confidence mechanisms</li><li><i class="fas fa-check-circle"></i> Seamless cross-platform purchase paths</li><li><i class="fas fa-check-circle"></i> Abandoned interest recovery strategies</li><li><i class="fas fa-check-circle"></i> Ongoing funnel analysis and refinement</li></ul><div class="svc-out"><p>The result is a system that works continuously to convert interest into revenue without requiring constant manual intervention.</p></div></div></div>
+
+        <div class="svc" data-r="u"><div class="svc-n">03</div><div class="svc-b"><h4>Amazon & Platform Optimization</h4><p>Your book's presence on major retail platforms is one of the most powerful sales assets you have. Most authors leave significant revenue on the table by neglecting these elements.</p><ul class="svc-f"><li><i class="fas fa-check-circle"></i> Comprehensive high-intent keyword research</li><li><i class="fas fa-check-circle"></i> Metadata refinement for discoverability</li><li><i class="fas fa-check-circle"></i> Conversion-focused description copywriting</li><li><i class="fas fa-check-circle"></i> Strategic category and subcategory selection</li><li><i class="fas fa-check-circle"></i> Review acquisition system development</li><li><i class="fas fa-check-circle"></i> Ongoing monitoring and optimization</li></ul><div class="svc-out"><p>The goal is to make your book the obvious choice when the right reader is searching for exactly what you have written.</p></div></div></div>
+
+        <div class="svc" data-r="u"><div class="svc-n">04</div><div class="svc-b"><h4>Targeted Visibility Campaigns</h4><p>Visibility without targeting is wasted effort. Reaching millions of uninterested people produces no sales. Reaching thousands of high-intent readers produces consistent revenue.</p><ul class="svc-f"><li><i class="fas fa-check-circle"></i> Precision audience research and location</li><li><i class="fas fa-check-circle"></i> Niche-calibrated paid and organic strategies</li><li><i class="fas fa-check-circle"></i> Multi-channel sustained exposure architecture</li><li><i class="fas fa-check-circle"></i> Creative asset guidance for promotions</li><li><i class="fas fa-check-circle"></i> Real-time campaign monitoring and adjustment</li><li><i class="fas fa-check-circle"></i> Detailed performance reporting with attribution</li></ul><div class="svc-out"><p>Every campaign is built around your book's unique market position and executed with measurable outcomes as the primary objective.</p></div></div></div>
+
+        <div class="svc" data-r="u"><div class="svc-n">05</div><div class="svc-b"><h4>Author Brand Elevation</h4><p>A single book is a product. An author brand is a legacy. Authors who invest in professional identity create compounding advantages for every future release.</p><ul class="svc-f"><li><i class="fas fa-check-circle"></i> Consistent author identity development</li><li><i class="fas fa-check-circle"></i> Professional digital channel positioning</li><li><i class="fas fa-check-circle"></i> Strategic presence and content architecture</li><li><i class="fas fa-check-circle"></i> Cross-title promotion frameworks</li><li><i class="fas fa-check-circle"></i> Long-term visibility planning beyond campaigns</li><li><i class="fas fa-check-circle"></i> Industry positioning for literary authority</li></ul><div class="svc-out"><p>The result is an author brand that commands respect, attracts loyal readers, and makes every future release easier to market.</p></div></div></div>
+
+        <div class="svc" data-r="u"><div class="svc-n">06</div><div class="svc-b"><h4>Featured Author Placement</h4><p>Selected authors receive premium placement within my professional network and targeted reader channels. This curated program delivers direct sales impact and enhanced visibility.</p><ul class="svc-f"><li><i class="fas fa-check-circle"></i> Prominent dedicated reader channel showcasing</li><li><i class="fas fa-check-circle"></i> Professional conversion-optimized presentation</li><li><i class="fas fa-check-circle"></i> Strategic established network exposure</li><li><i class="fas fa-check-circle"></i> Sustained multi-window visibility</li><li><i class="fas fa-check-circle"></i> Direct purchase pathway integration</li><li><i class="fas fa-check-circle"></i> Selective quality-maintained placement</li></ul><div class="svc-out"><p>Placements are offered selectively to maintain effectiveness. Featured authors represent the professional standard I deliver.</p></div></div></div>
+
+        <div class="cta-box" data-r="s">
+            <h3>Ready to Transform Your Book's Performance?</h3>
+            <p>Send me your book details and growth objectives. I will respond with a customized strategic approach tailored specifically to your book.</p>
+            <a href="#contact" class="btn btn-g"><i class="fas fa-envelope"></i> Start Your Project</a>
+        </div>
+    </div>
+</section>
+
+<!-- AUTHORS -->
+<section class="authors sec" id="authors">
+    <div class="sec-in">
+        <div class="sec-hd" data-r="u">
+            <div class="sec-tag"><span class="sec-tag-l"></span><span class="sec-tag-t">Featured Authors</span><span class="sec-tag-l"></span></div>
+            <div class="sec-rule"></div>
+            <h2 class="sec-title">Authors I Have <span class="ac">Worked With</span></h2>
+            <p class="sec-sub">The following authors have partnered with Digital Book Growth and experienced the results of structured, professional book marketing execution.</p>
+        </div>
+
+        <div class="auth-g">
+            <!-- David Gross -->
+            <div class="auth-c" data-r="u" data-d="1">
+                <div class="auth-top">
+                    <a href="https://www.amazon.com/stores/David-Gross/author/" target="_blank" rel="noopener noreferrer" class="auth-av" title="View David Gross on Amazon"><img src="david gross.jpeg" alt="David Gross"></a>
+                    <div><h4 class="auth-name">David Gross</h4><span class="auth-role">Published Author</span></div>
+                </div>
+                <div class="auth-book">
+                    <a href="https://www.amazon.com/stores/David-Gross/author/" target="_blank" rel="noopener noreferrer" class="auth-cover" title="View Book on Amazon"><img src="david gross book.jpeg" alt="David Gross - Book"></a>
+                </div>
+                <div class="auth-info"><div class="auth-res"><p>Achieved consistent category visibility and sustained sales growth through precision audience targeting and optimized conversion architecture.</p></div></div>
+                <div class="auth-acts">
+                    <a href="mailto:docdavevoice@gmail.com" class="auth-email"><i class="fas fa-envelope"></i> docdavevoice@gmail.com</a>
+                    <a href="https://www.amazon.com/stores/David-Gross/author/" target="_blank" rel="noopener noreferrer" class="auth-amz"><i class="fab fa-amazon"></i> View on Amazon</a>
+                </div>
+            </div>
+
+            <!-- Michael Molloy -->
+            <div class="auth-c" data-r="u" data-d="2">
+                <div class="auth-top">
+                    <a href="https://www.amazon.com/stores/Michael-Molloy/author/" target="_blank" rel="noopener noreferrer" class="auth-av" title="View Michael Molloy on Amazon"><img src="michael molloy.jpeg" alt="Michael Molloy"></a>
+                    <div><h4 class="auth-name">Michael Molloy</h4><span class="auth-role">Published Author</span></div>
+                </div>
+                <div class="auth-book">
+                    <a href="https://www.amazon.com/stores/Michael-Molloy/author/" target="_blank" rel="noopener noreferrer" class="auth-cover" title="View Book on Amazon"><img src="michael molloy book.jpeg" alt="Michael Molloy - Book"></a>
+                </div>
+                <div class="auth-info"><div class="auth-res"><p>Repositioned author brand and restructured sales funnel resulting in measurable growth in reader acquisition and purchase conversion rates.</p></div></div>
+                <div class="auth-acts">
+                    <a href="mailto:michaeljmolloywriter@gmail.com" class="auth-email"><i class="fas fa-envelope"></i> michaeljmolloywriter@gmail.com</a>
+                    <a href="https://www.amazon.com/stores/Michael-Molloy/author/" target="_blank" rel="noopener noreferrer" class="auth-amz"><i class="fab fa-amazon"></i> View on Amazon</a>
+                </div>
+            </div>
+
+            <!-- Marc Hoffman -->
+            <div class="auth-c" data-r="u" data-d="3">
+                <div class="auth-top">
+                    <a href="https://www.amazon.com/stores/Marc-Hoffman/author/" target="_blank" rel="noopener noreferrer" class="auth-av" title="View Marc Hoffman on Amazon"><img src="marc hoffman.jpeg" alt="Marc Hoffman"></a>
+                    <div><h4 class="auth-name">Marc Hoffman</h4><span class="auth-role">Published Author</span></div>
+                </div>
+                <div class="auth-book">
+                    <a href="https://www.amazon.com/stores/Marc-Hoffman/author/" target="_blank" rel="noopener noreferrer" class="auth-cover" title="View Book on Amazon"><img src="rants book.jpeg" alt="Marc Hoffman - Book"></a>
+                </div>
+                <div class="auth-info"><div class="auth-res"><p>Delivered targeted visibility campaign that expanded reach into previously untapped reader segments and increased consistent monthly sales performance.</p></div></div>
+                <div class="auth-acts">
+                    <a href="mailto:mkhoffman@optonline.net" class="auth-email"><i class="fas fa-envelope"></i> mkhoffman@optonline.net</a>
+                    <a href="https://www.amazon.com/stores/Marc-Hoffman/author/" target="_blank" rel="noopener noreferrer" class="auth-amz"><i class="fab fa-amazon"></i> View on Amazon</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- PROCESS -->
+<section class="process sec" id="process">
+    <div class="sec-in">
+        <div class="sec-hd" data-r="u">
+            <div class="sec-tag"><span class="sec-tag-l"></span><span class="sec-tag-t">Work Process</span><span class="sec-tag-l"></span></div>
+            <div class="sec-rule"></div>
+            <h2 class="sec-title">The Digital Book Growth <span class="ac">Engagement Process</span></h2>
+            <p class="sec-sub">Every project follows a structured, documented workflow designed to protect both parties, ensure clarity, and deliver consistent professional results.</p>
+        </div>
+        <div class="proc-tl">
+            <div class="proc-s" data-r="u" data-d="1"><div class="proc-ic"><span class="proc-ic-n">01</span></div><div class="proc-txt"><h4>Initial Email Inquiry</h4><p>You send a detailed email to peterdigutalsuite03@gmail.com outlining your book, your current situation, your platforms, and your specific growth objectives. All information shared is treated with complete confidentiality. Simply send a professional email with your details and I will take it from there.</p></div></div>
+            <div class="proc-s" data-r="u" data-d="2"><div class="proc-ic"><span class="proc-ic-n">02</span></div><div class="proc-txt"><h4>Comprehensive Strategy Assessment</h4><p>I conduct a thorough review of your book, genre, competitive landscape, and stated objectives. I then prepare a comprehensive response detailing the recommended strategic approach, key tactics, timeline expectations, and measurable success indicators. This becomes the foundation of our engagement.</p></div></div>
+            <div class="proc-s" data-r="u" data-d="3"><div class="proc-ic"><span class="proc-ic-n">03</span></div><div class="proc-txt"><h4>Confirmation & Professional Onboarding</h4><p>Upon mutual agreement via email, we confirm scope, deliverables, and responsibilities. Everything is recorded in writing before any work begins, ensuring both parties share a clear understanding of the engagement and expected outcomes.</p></div></div>
+            <div class="proc-s" data-r="u" data-d="4"><div class="proc-ic"><span class="proc-ic-n">04</span></div><div class="proc-txt"><h4>Strategy Execution</h4><p>I implement the agreed strategy with disciplined attention to detail. You receive regular email updates covering progress milestones, tactical adjustments, and intermediate performance indicators throughout the active campaign period. You are never left wondering what is happening.</p></div></div>
+            <div class="proc-s" data-r="u" data-d="5"><div class="proc-ic"><span class="proc-ic-n">05</span></div><div class="proc-txt"><h4>Performance Review & Documented Reporting</h4><p>Upon completion, I deliver a comprehensive performance review via email including data-backed insights, results against objectives, lessons learned, and strategic recommendations for continued growth. This documented record becomes a valuable asset for your publishing journey.</p></div></div>
+        </div>
+    </div>
+</section>
+
+<!-- POLICY -->
+<section class="policy sec" id="policy">
+    <div class="sec-in">
+        <div class="sec-hd" data-r="u">
+            <div class="sec-tag"><span class="sec-tag-l"></span><span class="sec-tag-t">Communication Policy</span><span class="sec-tag-l"></span></div>
+            <div class="sec-rule"></div>
+            <h2 class="sec-title">Professional Communication <span class="ac">Standards</span></h2>
+            <p class="sec-sub">Clarity, accountability, and professionalism define every interaction within a Digital Book Growth engagement.</p>
+        </div>
+        <div class="pol-g">
+            <div class="pol-txt" data-r="l">
+                <h3>Email-Only <span class="ac">Communication</span></h3>
+                <p class="pol-d">To maintain the highest level of clarity, professionalism, and accountability in all project engagements, every aspect of our working relationship is conducted exclusively through email.</p>
+                <p class="pol-d">This includes:</p>
+                <ul class="pol-ul">
+                    <li><i class="fas fa-check"></i> Initial inquiries and project discussions</li>
+                    <li><i class="fas fa-check"></i> Strategy development and presentation</li>
+                    <li><i class="fas fa-check"></i> Approvals, confirmations, and agreements</li>
+                    <li><i class="fas fa-check"></i> Progress updates and milestone reporting</li>
+                    <li><i class="fas fa-check"></i> Performance reviews and optimization recommendations</li>
+                    <li><i class="fas fa-check"></i> All correspondence related to your book and campaign</li>
+                </ul>
+                <div class="pol-notice">Phone calls, instant messaging, video meetings, and social media direct messages are not available for project discussions. This structure has been deliberately designed to deliver the best possible professional outcomes for every author I work with.</div>
+            </div>
+            <div class="pol-cards" data-r="r">
+                <div class="pol-card"><div class="pol-card-ic"><i class="fas fa-file-alt"></i></div><h5>Complete Documentation</h5><p>Every agreement, strategy decision, revision, and deliverable exists in written form. Nothing is left to memory or verbal interpretation.</p></div>
+                <div class="pol-card"><div class="pol-card-ic"><i class="fas fa-shield-alt"></i></div><h5>Full Accountability</h5><p>Both parties have access to a complete, timestamped record of every interaction. This protects you and ensures I am held to every commitment.</p></div>
+                <div class="pol-card"><div class="pol-card-ic"><i class="fas fa-eye"></i></div><h5>Professional Clarity</h5><p>Written communication eliminates ambiguity that often occurs in real-time conversations, ensuring strategies are clearly understood and executed.</p></div>
+                <div class="pol-card"><div class="pol-card-ic"><i class="fas fa-brain"></i></div><h5>Focused Strategic Thinking</h5><p>Email allows for thoughtful, well-considered responses rather than rushed real-time reactions, resulting in higher quality strategic guidance.</p></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact sec" id="contact">
+    <div class="sec-in">
+        <div class="sec-hd" data-r="u">
+            <div class="sec-tag"><span class="sec-tag-l"></span><span class="sec-tag-t">Contact</span><span class="sec-tag-l"></span></div>
+            <div class="sec-rule"></div>
+            <h2 class="sec-title">Let's Grow <span class="ac">Your Book</span></h2>
+            <p class="sec-sub">If you are a serious author ready to invest in professional strategic marketing for your book, I am ready to hear from you.</p>
+        </div>
+        <div class="con-g">
+            <div class="con-info" data-r="l">
+                <h3>Start Your <span class="ac">Growth Journey</span></h3>
+                <p class="con-tl">Professional book marketing begins with a single email.</p>
+                <p class="con-desc">Send your inquiry with your book details and growth objectives. I review every inquiry personally and respond promptly with a detailed assessment outlining the best strategic path forward. All communication is handled exclusively via email to ensure complete documentation and professional accountability.</p>
+                <ul class="con-dets">
+                    <li><div class="con-det-ic"><i class="fas fa-envelope"></i></div><div><div class="con-det-label">Email</div><div class="con-det-val">peterdigutalsuite03@gmail.com</div></div></li>
+                    <li><div class="con-det-ic"><i class="fas fa-user-tie"></i></div><div><div class="con-det-label">Specialist</div><div class="con-det-val">Peter — Digital Book Growth</div></div></li>
+                    <li><div class="con-det-ic"><i class="fas fa-book-open"></i></div><div><div class="con-det-label">Specialization</div><div class="con-det-val">Book Marketing & Sales Strategy</div></div></li>
+                    <li><div class="con-det-ic"><i class="fas fa-file-signature"></i></div><div><div class="con-det-label">Communication</div><div class="con-det-val">Email Only — Fully Documented</div></div></li>
+                </ul>
+                <div class="con-port"><div class="con-port-fr"></div><img src="expert.jpeg" alt="Peter - Digital Book Growth"></div>
+            </div>
+            <div class="con-form" data-r="r">
+                <h4 class="con-form-t">Send Your Inquiry</h4>
+                <p class="con-form-d">All messages go directly to my professional inbox</p>
+                <form action="https://formspree.io/f/xvzdlepz" method="POST" id="cForm">
+                    <div class="f-row">
+                        <div class="f-grp"><label for="name">Full Name</label><input type="text" id="name" name="name" placeholder="Your full name" required></div>
+                        <div class="f-grp"><label for="email">Email Address</label><input type="email" id="email" name="email" placeholder="Your email address" required></div>
+                    </div>
+                    <div class="f-row">
+                        <div class="f-grp"><label for="bTitle">Book Title</label><input type="text" id="bTitle" name="book_title" placeholder="Your book title" required></div>
+                        <div class="f-grp"><label for="genre">Genre</label>
+                            <select id="genre" name="genre" required>
+                                <option value="">Select genre</option>
+                                <option value="Fiction">Fiction</option>
+                                <option value="Non-Fiction">Non-Fiction</option>
+                                <option value="Romance">Romance</option>
+                                <option value="Thriller">Thriller / Suspense</option>
+                                <option value="Mystery">Mystery</option>
+                                <option value="Science Fiction">Science Fiction</option>
+                                <option value="Fantasy">Fantasy</option>
+                                <option value="Self-Help">Self-Help</option>
+                                <option value="Business">Business</option>
+                                <option value="Biography">Biography / Memoir</option>
+                                <option value="Children">Children's Books</option>
+                                <option value="Poetry">Poetry</option>
+                                <option value="Horror">Horror</option>
+                                <option value="Historical Fiction">Historical Fiction</option>
+                                <option value="Other">Other</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="f-grp"><label for="plat">Current Platforms</label><input type="text" id="plat" name="platforms" placeholder="e.g., Amazon, Barnes & Noble, IngramSpark"></div>
+                    <div class="f-grp"><label for="svc">Service Interest</label>
+                        <select id="svc" name="service_interest">
+                            <option value="">Select a service</option>
+                            <option value="Book Launch Strategy">Book Launch & Positioning Strategy</option>
+                            <option value="Sales Funnel Optimization">Sales Funnel Optimization</option>
+                            <option value="Amazon Optimization">Amazon & Platform Optimization</option>
+                            <option value="Visibility Campaigns">Targeted Visibility Campaigns</option>
+                            <option value="Author Brand Elevation">Author Brand Elevation</option>
+                            <option value="Featured Author Placement">Featured Author Placement</option>
+                            <option value="Full Strategic Package">Full Strategic Package</option>
+                        </select>
+                    </div>
+                    <div class="f-grp"><label for="goals">Primary Goals & Challenges</label><textarea id="goals" name="goals" placeholder="Describe your primary growth objectives, previous marketing efforts, and specific challenges you face..." required></textarea></div>
+                    <button type="submit" class="f-sub" id="subBtn"><i class="fas fa-paper-plane"></i> &nbsp; Submit Inquiry</button>
+                    <div class="f-note"><i class="fas fa-lock"></i><span>Your information is kept strictly confidential. I respond personally to every inquiry.</span></div>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+    <div class="ft-main">
+        <div class="ft-brand">
+            <h3>PETER <span>| Digital Book Growth</span></h3>
+            <p class="ft-brand-tl">Transforming Books into Revenue-Generating Digital Assets</p>
+            <p>Professional Book Marketing Strategist dedicated to helping authors increase visibility, grow their audience, and convert more book sales through strategic digital marketing. All engagements are fully documented via email for complete transparency and accountability.</p>
+            <div class="ft-badges">
+                <div class="ft-badge"><i class="fas fa-check-circle"></i> Email Documented</div>
+                <div class="ft-badge"><i class="fas fa-check-circle"></i> Fully Accountable</div>
+                <div class="ft-badge"><i class="fas fa-check-circle"></i> Results Focused</div>
+                <div class="ft-badge"><i class="fas fa-check-circle"></i> Confidential</div>
+            </div>
+        </div>
+        <div class="ft-col">
+            <h5>Navigation</h5>
+            <ul class="ft-nav">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#authors">Featured Authors</a></li>
+                <li><a href="#process">Process</a></li>
+                <li><a href="#policy">Communication Policy</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+        <div class="ft-col">
+            <h5>Services</h5>
+            <ul class="ft-nav">
+                <li><a href="#services">Book Launch Strategy</a></li>
+                <li><a href="#services">Sales Funnel Optimization</a></li>
+                <li><a href="#services">Amazon Optimization</a></li>
+                <li><a href="#services">Visibility Campaigns</a></li>
+                <li><a href="#services">Author Brand Elevation</a></li>
+                <li><a href="#services">Featured Placement</a></li>
+            </ul>
+        </div>
+        <div class="ft-col">
+            <h5>Contact</h5>
+            <ul class="ft-con">
+                <li><i class="fas fa-envelope"></i><a href="mailto:peterdigutalsuite03@gmail.com">peterdigutalsuite03@gmail.com</a></li>
+                <li><i class="fas fa-user-tie"></i><span>Peter — Book Specialist Marketer</span></li>
+                <li><i class="fas fa-file-signature"></i><span>All projects documented via email</span></li>
+                <li><i class="fas fa-shield-alt"></i><span>Professional & confidential service</span></li>
+                <li><i class="fas fa-clock"></i><span>Prompt response to all inquiries</span></li>
+            </ul>
+        </div>
+    </div>
+    <div class="ft-bot">
+        <p class="ft-copy">&copy; 2025 <span class="ac">Digital Book Growth</span> — Peter | Book Specialist Marketer. All rights reserved.</p>
+        <a href="#home" class="ft-top" title="Back to top"><i class="fas fa-arrow-up"></i></a>
+    </div>
+</footer>
+
+<script>
+(function(){
+    'use strict';
+
+    // Preloader
+    window.addEventListener('load',function(){setTimeout(function(){document.getElementById('preloader').classList.add('loaded')},2600)});
+
+    // Nav scroll
+    var nav=document.getElementById('mainNav');
+    window.addEventListener('scroll',function(){nav.classList.toggle('sc',window.scrollY>55)});
+
+    // Hamburger
+    var ham=document.getElementById('ham'),mob=document.getElementById('mobNav');
+    ham.addEventListener('click',function(){ham.classList.toggle('on');mob.classList.toggle('on');document.body.style.overflow=mob.classList.contains('on')?'hidden':''});
+    window.cM=function(){ham.classList.remove('on');mob.classList.remove('on');document.body.style.overflow=''};
+
+    // Particles
+    var pc=document.getElementById('pts');
+    for(var i=0;i<30;i++){var p=document.createElement('div');p.className='pt';var s=Math.random()*3+1;p.style.cssText='width:'+s+'px;height:'+s+'px;left:'+Math.random()*100+'%;animation-delay:'+Math.random()*12+'s;animation-duration:'+(Math.random()*8+7)+'s';pc.appendChild(p)}
+
+    // Reveal
+    function rv(){var e=document.querySelectorAll('[data-r]'),h=window.innerHeight;for(var i=0;i<e.length;i++){if(e[i].getBoundingClientRect().top<h-100)e[i].classList.add('vis')}}
+    window.addEventListener('scroll',rv);setTimeout(rv,400);
+
+    // Counter
+    var cd=false;
+    function rc(){if(cd)return;var c=document.querySelectorAll('.ctr');if(!c.length)return;if(c[0].getBoundingClientRect().top<window.innerHeight-80){cd=true;c.forEach(function(el){var t=parseInt(el.getAttribute('data-t')),cur=0,st=Math.max(1,Math.ceil(t/70)),tm=setInterval(function(){cur+=st;if(cur>=t){cur=t;clearInterval(tm)}el.textContent=cur},28)})}}
+    window.addEventListener('scroll',rc);
+
+    // Smooth scroll
+    document.querySelectorAll('a[href^="#"]').forEach(function(a){a.addEventListener('click',function(e){e.preventDefault();var t=document.querySelector(this.getAttribute('href'));if(t)window.scrollTo({top:t.getBoundingClientRect().top+window.pageYOffset-75,behavior:'smooth'})})});
+
+    // Active nav
+    window.addEventListener('scroll',function(){var s=document.querySelectorAll('section[id]'),l=document.querySelectorAll('.nav-a:not(.nav-cta)'),cur='';s.forEach(function(sec){if(window.pageYOffset>=sec.offsetTop-180)cur=sec.id});l.forEach(function(lnk){lnk.classList.toggle('act',lnk.getAttribute('href')==='#'+cur)})});
+
+    // Form
+    var f=document.getElementById('cForm'),b=document.getElementById('subBtn');
+    if(f)f.addEventListener('submit',function(){b.innerHTML='<i class="fas fa-spinner fa-spin"></i> &nbsp; Sending...';b.style.opacity='.7';b.style.pointerEvents='none'});
+})();
+</script>
+</body>
+</html>
